@@ -82,7 +82,7 @@ var fs = require('fs');
 	});
 
 	var settings = {
-		targetChatId: -492778,
+		targetChatId: keys.gameInvitesChat,
 		usersFile: './users.json',
 		commands: [
 			new Game(),
