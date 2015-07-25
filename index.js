@@ -124,7 +124,7 @@ var fs = require('fs');
 
         setTimeout(function() {
             settings.timedOut = false;
-        }, seconds);
+        }, seconds * 1000);
     }
 
     function resolveSender(message) {
