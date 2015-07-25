@@ -5,7 +5,7 @@ var fs = require('fs');
 (function() {
     var Game = function() {
         this.process = function(message) {
-            if(message.text !== '/game') {
+            if(message.text !== '/game' || message.chat.id !== settings.targetChatId) {
                 return;
             }
 
@@ -134,10 +134,6 @@ var fs = require('fs');
     }
 
     api.on('message', function(message) {
-        if(message.chat.id !== settings.targetChatId) {
-            return;
-        }
-
         registerUser(message.from);
 
         _.each(settings.commands, function(cmd) {
