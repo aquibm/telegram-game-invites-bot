@@ -123,7 +123,7 @@ var fs = require('fs');
         settings.timedOut = true;
 
         setTimeout(function() {
-            this.timedOut = false;
+            settings.timedOut = false;
         }, seconds);
     }
 
