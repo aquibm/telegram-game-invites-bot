@@ -5,7 +5,7 @@ var fs = require('fs');
 (function() {
     var Game = function() {
         this.process = function(message) {
-            if(message.text !== '/game' || message.chat.id !== settings.targetChatId) {
+            if(!resolveCommand(message.text, '/game')|| message.chat.id !== settings.targetChatId) {
                 return;
             }
 
@@ -44,9 +44,9 @@ var fs = require('fs');
 
     var Start = function() {
         this.process = function(message) {
-            if(message.text !== '/start' && message.text !== '/unmute') {
-                return;
-            }
+        	if(!resolveCommand(message.text, '/start') && !resolveCommand(message.text, '/unmute')) {
+        		return;
+        	}
 
             var sender = resolveSender(message);
 
@@ -59,7 +59,7 @@ var fs = require('fs');
 
     var Mute = function() {
         this.process = function(message) {
-            if(message.text !== '/mute') {
+            if(!resolveCommand(message.text, '/mute')) {
                 return;
             }
 
@@ -90,7 +90,8 @@ var fs = require('fs');
             new Mute()
         ],
         timeoutDuration: 300,
-        timedOut: false
+        timedOut: false,
+        botName: keys.botName
     };
 
     var users = require(settings.usersFile);
@@ -131,6 +132,10 @@ var fs = require('fs');
         return _.find(users, function(user) {
             return message.from.id === user.id;
         });
+    }
+
+    function resolveCommand(command, expected) {
+    	return command === expected || command === expected + '@' + settings.botName;
     }
 
     api.on('message', function(message) {

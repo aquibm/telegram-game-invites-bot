@@ -1,4 +1,5 @@
 {
 	"token": "telegram-token",
-	"gameInvitesChat": -1
+	"gameInvitesChat": -1,
+	"botName": "GameInviteBot"
 }
