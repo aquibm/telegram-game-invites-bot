@@ -1,11 +1,11 @@
 {
   "name": "telegram-game-invites-bot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A simple telegram bot to send out game invites.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aquibm/Game-Invites-Bot"
+    "url": "https://github.com/aquibm/telegram-game-invites-bot"
   },
   "keywords": [
     "game",
@@ -14,14 +14,5 @@
     "bot"
   ],
   "author": "Aquib Master",
-  "license": "MIT",
-  "dependencies": {
-    "telegram-bot-api": "~0.3.1",
-    "lodash": "~3.10.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-copy": "0.0.2",
-    "gulp-typescript": "^2.13.6"
-  }
+  "license": "MIT"
 }
