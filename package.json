@@ -1,6 +1,6 @@
 {
   "name": "telegram-game-invites-bot",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple telegram bot to send out game invites.",
   "main": "index.js",
   "repository": {
