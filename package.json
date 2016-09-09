@@ -1,8 +1,8 @@
 {
   "name": "telegram-game-invites-bot",
   "version": "2.0.0",
-  "description": "A simple telegram bot to send out game invites.",
-  "main": "index.js",
+  "description": "A telegram chat bot to send out game invitations to members of a group chat",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/aquibm/telegram-game-invites-bot"
