@@ -1,20 +1,22 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Bot = undefined;
-
 var _nodeTelegramBotApi = require('node-telegram-bot-api');
 
 var _nodeTelegramBotApi2 = _interopRequireDefault(_nodeTelegramBotApi);
 
+var _config = require('./config');
+
+var _config2 = _interopRequireDefault(_config);
+
+var _bot = require('./bot/bot');
+
+var _bot2 = _interopRequireDefault(_bot);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var telegramApi = new _nodeTelegramBotApi2.default(_config2.default.telegramToken, {
+    polling: true
+});
 
-var Bot = exports.Bot = function Bot() {
-  _classCallCheck(this, Bot);
-};
-
-exports.default = Bot;
+var bot = new _bot2.default(telegramApi);
+bot.registerSelf();

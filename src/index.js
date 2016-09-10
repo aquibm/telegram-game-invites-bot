@@ -1,6 +1,10 @@
 import TelegramBot from 'node-telegram-bot-api';
+import config from './config';
+import Bot from './bot/bot';
 
-export class Bot {
-}
+const telegramApi = new TelegramBot(config.telegramToken, {
+    polling: true,
+});
 
-export default Bot;
+const bot = new Bot(telegramApi);
+bot.registerSelf();
