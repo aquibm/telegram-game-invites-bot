@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import Bot from './index';
 
 describe('bot suite', () => {
     it('should always pass', () => {
@@ -7,5 +8,11 @@ describe('bot suite', () => {
 
     it('should always pass as well', () => {
         expect(false).to.be.false;
+    });
+    
+    it('should build a bot', () => {
+        expect(() => {
+            const bot = new Bot();
+        }).to.not.throw();
     });
 });

@@ -1,3 +1,6 @@
-import { TelegramBot } from 'node-telegram-bot-api';
+import TelegramBot from 'node-telegram-bot-api';
 
-const bot = new TelegramBot();
+export class Bot {
+}
+
+export default Bot;
